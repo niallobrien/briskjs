@@ -1,0 +1,34 @@
+//
+// ICONS
+// =====
+// Default styles for icons. Hides text, applies a background image, and uses
+// a Modernizr class to switch the default PNG sprite for an SVG.
+//
+
+
+//
+// BASE STYLES
+// Some simple styles for other icons to extend and customise
+//
+
+.icon
+  hide-text()
+  display inline-block
+  background-repeat no-repeat
+  background-position 100% 100%
+  // background-image versionPath('/assets/img/sprite/generated/icon-sprite.png')
+  // .svg &
+  //   background-image versionPath('/assets/img/sprite/generated/icon-sprite.svg')
+
+// If using the sprite generator, uncomment this line to add the icon styles
+// @require '../sprite/sprite'
+
+//
+// EXAMPLE ICON MODIFIER
+//
+
+// .icon--close--hover
+//   {$icon--close}
+//   &:hover
+//     {$icon--close--reversed}
+

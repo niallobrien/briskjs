@@ -1,0 +1,155 @@
+//
+// TYPOGRAPHIC STYLES
+// ==================
+// Base typography styles
+//
+// Layout styles for typographic elements should live in base.styl
+// Form and Table styles live in their respective stylesheets
+//
+
+
+//
+// SELECTED TEXT
+//
+
+::selection
+  color $color--white
+  background $color--primary
+  text-shadow none
+
+
+//
+// BASE STYLES
+//
+
+html
+  font-size $base--font-size
+  font-family $base--font-body
+  line-height $base--line-height
+  color $base--font-color
+  font-weight normal
+  -ms-text-size-adjust 100%
+  -webkit-text-size-adjust 100%
+
+body
+  font-size 1em
+
+
+//
+// HEADINGS
+// Headings are intentionally styled to look like standard body copy
+//
+
+h1, h2, h3, h4, h5, h6
+  font-family inherit
+  font-weight inherit
+  font-size inherit
+  line-height inherit
+
+
+//
+// LINKS & BUTTONS
+//
+
+// Set default link styles as a variable to allow `@extend` from `button.styl`
+$default-link
+  color $color--primary
+  text-decoration none
+
+  &:focus
+  &:hover
+    color $color--black
+    text-decoration underline
+    outline 0
+
+  &:active
+    color $color--black
+
+a
+  @extend $default-link
+
+
+//
+// EMPHASIS
+//
+
+blockquote, q, em, dfn, i, cite, var
+  font-style italic
+
+th, strong, dt, b
+  font-weight bold
+
+
+//
+// QUOTES
+//
+
+blockquote p:before, blockquote p:after, q:before, q:after
+  content ''
+
+blockquote
+
+  p
+    font-size 1.5em
+    margin-bottom 0
+
+
+//
+// TEXT MARKING
+//
+
+ins
+  text-decoration none
+  border-bottom 3px double
+
+del, s
+  text-decoration line-through
+
+mark
+  background-color lighten($color--notice, 40%)
+  color $color--black
+  margin-left -2px
+  margin-right -2px
+  padding-left 2px
+  padding-right 2px
+
+
+//
+// PRE-FORMATTED TEXT / CODE BLOCKS
+//
+
+pre
+code
+samp
+kbd
+  font-family 'Monaco', monospace
+  font-size 0.9em
+
+
+//
+// ADDITIONAL PRESONTATIONAL ELEMENTS
+//
+
+address
+  font-style normal
+
+abbr[title]
+  border-bottom 1px dotted
+  text-decoration none
+
+// In HTML5, the `<small>` element represents legal text or small-print, rather
+// than dictating a font size.
+small
+  font-size inherit
+
+sub, sup
+  position relative
+  font-size 0.75em
+  line-height 0
+  vertical-align baseline
+
+sup
+  top -0.5em
+
+sub
+  bottom -0.25em

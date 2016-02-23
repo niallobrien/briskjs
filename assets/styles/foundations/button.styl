@@ -1,0 +1,101 @@
+//
+// BUTTONS
+// =======
+//
+
+
+//
+// BASE STYLES
+// Base styles to persuade `<a>`, `<button>` and `<input>` elements to look the
+// same as each other, across various browsers.
+//
+
+.button
+  display inline-block
+  border 0
+  vertical-align middle
+  cursor pointer
+  overflow visible // removes padding in IE
+
+  // Presentational Styles
+  padding 0.5em 1em
+  line-height 1.2
+  font-size 1em
+  font-family inherit
+  color inherit
+  background-color $color--grey
+  text-align center
+
+  &:focus
+  &:hover
+    text-decoration none
+    background-color lighten($color--grey, 10%)
+    outline 0
+
+  &:active
+    background-color darken($color--grey, 20%)
+
+
+//
+// BUTTON MODIFIERS
+// Remember to add button variation modifier examples to the style guide page.
+//
+
+.button--primary
+  color $color--white
+  background-color $color--primary
+
+  &:focus
+  &:hover
+    color $color--white
+    background-color lighten($color--primary, 10%)
+
+  &:active
+    background-color darken($color--primary, 20%)
+
+
+//
+// DISABLED BUTTON
+//
+
+.button[disabled]
+.button.is-disabled
+  opacity 0.75
+  user-select none
+  pointer-events none
+
+
+//
+// BUTTON GROUP
+// Contains multiple buttons and adds spacing between them.
+//
+
+.button--block
+  display block
+  width 100%
+
+
+//
+// BUTTON GROUP
+// Contains multiple buttons and adds spacing between them.
+//
+
+.button-group
+  .button + .button
+    margin-left 0.5em
+
+
+//
+// UNSTYLED BUTTON
+// Simple reset to make button elements look more like text links.
+//
+
+.text-btn
+  @extend $default-link
+  padding 0
+  margin 0
+  border 0
+  background none
+  cursor pointer
+  font-family inherit
+  font-size inherit

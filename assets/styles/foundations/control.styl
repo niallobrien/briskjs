@@ -1,0 +1,49 @@
+//
+// CONTROLS
+// ========
+// Used to markup and style all form controls: inputs, textareas, selects etc.
+//
+
+
+$control--text
+  display block
+  width 100%
+  padding 0.25em 0.5em
+  border 1px solid $color--grey
+  line-height $base--line-height
+  font-family inherit
+  font-size inherit
+  background-color $color--white
+  border-radius 0
+  &:focus
+    border-color $color--primary
+    outline 0
+
+.control--text
+  @extend $control--text
+  -webkit-appearance none
+
+.control--choice
+  @extend $control--text
+  height $base--line-height + 0.5em // match the line-height and vertical padding of $control--text
+
+.control--multilined
+  resize vertical
+  height auto
+
+.control--boolean
+  margin-right 10px
+  line-height inherit
+  vertical-align middle
+
+  & + span
+    vertical-align middle
+
+  span + &
+    margin-right 0
+    margin-left 10px
+
+.control--file
+  line-height 1
+  font-size inherit
+  font-family inherit
