@@ -115,9 +115,6 @@ The asset pipeline is based on Webpack. Webpack is used to compile the client-si
 
 While developing, run `npm run dev` in one terminal session and `npm start` in another.
 
-I prefer to use [pm2](http://pm2.keymetrics.io) to start my servers, so I'd change line #9 in  `package.json` to read `NODE_ENV=production pm2 app/app.js` instead.
-
-
 ### NPM Scripts
 ```npm start``` will start the app in `production` mode.
 
