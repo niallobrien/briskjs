@@ -8,6 +8,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "webpack --progress --colors --watch",
+    "build": "webpack -config webpack-production.config.js --progress --colors",
     "test": "mocha --reporter spec --timeout 5000"
   },
   "dependencies": {
