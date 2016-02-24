@@ -1,6 +1,7 @@
 require('webpack')
 var ExtractTextPlugin = require('extract-text-webpack-plugin'),
   autoprefixer = require('autoprefixer'),
+  BrowserSyncPlugin = require('browser-sync-webpack-plugin'),
   path = require('path'),
   nodeModulesPath = path.resolve('./node_modules'),
   buildPath = path.resolve(__dirname, 'public', 'scripts'),
@@ -52,7 +53,20 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'),
     return [ autoprefixer({ browsers: [ 'last 4 versions' ] }) ];
   },
   plugins: [
-    new ExtractTextPlugin('../styles/[name].css')
+    new ExtractTextPlugin('../styles/[name].css'),
+    new BrowserSyncPlugin(
+      // BrowserSync options
+      {
+        // browse to http://localhost:3001/ during development
+        host: 'localhost',
+        port: 3001,
+        // Express server is running on port 3000
+        proxy: 'http://localhost:3000/'
+      },
+      {
+        reload: true
+      }
+    )
   ]
 };
 
