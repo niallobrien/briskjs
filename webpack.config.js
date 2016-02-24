@@ -1,15 +1,15 @@
-var Webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var autoprefixer = require('autoprefixer');
-var path = require('path');
-var nodeModulesPath = path.resolve(__dirname, 'node_modules');
-var buildPath = path.resolve(__dirname, 'public', 'scripts');
-var mainPath = [
-  path.resolve(nodeModulesPath, 'stylus-mixins', 'index.styl'),
-  path.resolve(__dirname, 'assets', 'styles', 'index.styl'),
-  path.resolve(__dirname, 'assets', 'scripts', 'main.js')
-] 
-var config = {
+require('webpack')
+var ExtractTextPlugin = require('extract-text-webpack-plugin'),
+  autoprefixer = require('autoprefixer'),
+  path = require('path'),
+  nodeModulesPath = path.resolve('./node_modules'),
+  buildPath = path.resolve(__dirname, 'public', 'scripts'),
+  mainPath = [
+    path.resolve(nodeModulesPath, 'stylus-mixins', 'index.styl'),
+    path.resolve(__dirname, 'assets', 'styles', 'index.styl'),
+    path.resolve(__dirname, 'assets', 'scripts', 'main.js')
+  ],
+  config = {
   // Makes sure errors in console map to the correct file
   // and line number
   devtool: 'eval',
@@ -36,7 +36,7 @@ var config = {
       {
         test: /\.js$/,
         loader: 'babel',
-        exclude: [nodeModulesPath]
+        exclude: [ nodeModulesPath ]
       },
       {
         test: /\.css$/,
@@ -45,14 +45,14 @@ var config = {
       {
         test: /\.styl$/,
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader!postcss-loader!stylus-loader')
-      }      
+      }
     ]
   },
   postcss: function () {
-    return [ autoprefixer({ browsers: ['last 4 versions'] }) ];
+    return [ autoprefixer({ browsers: [ 'last 4 versions' ] }) ];
   },
   plugins: [
-    new ExtractTextPlugin("../styles/[name].css")
+    new ExtractTextPlugin('../styles/[name].css')
   ]
 };
 
