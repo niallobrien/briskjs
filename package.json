@@ -6,7 +6,7 @@
     "url": "https://github.com/sahat/hackathon-starter.git"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon app.js",
     "dev": "webpack --progress --colors --watch",
     "build": "webpack -config webpack-production.config.js --progress --colors",
     "test": "mocha --reporter spec --timeout 5000"

@@ -34,7 +34,7 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin'),
       // if you want to use React for example.
       {
         test: /\.js$/,
-        loader: 'babel',
+        loader: 'babel?presets[]=es2015',
         exclude: [ nodeModulesPath ]
       },
       {
